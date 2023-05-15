@@ -2,11 +2,11 @@ import java.util.Scanner;
 
 public class HelloWorld {
     public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        String userInput;
-//        System.out.println("Enter Something: ");
-//        userInput = sc.next();
-//        System.out.println("You entered " + userInput);
+        Scanner sc = new Scanner(System.in);
+        String userInput;
+        System.out.println("Enter Something: ");
+        userInput = sc.next();
+        System.out.println("You entered " + userInput);
 //        System.out.print("Hello, World!");
 //       int myFavoriteNumber = 7;
 //       System.out.println(myFavoriteNumber);
@@ -48,9 +48,9 @@ public class HelloWorld {
 
 //        %n in format sets new line
 //        %s references string?
-        String name = "Theodoric Graham";
-        int number = 128;
-        System.out.printf("%s%s", name, number);
+//        String name = "Theodoric Graham";
+//        int number = 128;
+//        System.out.printf("%s%s", name, number);
 
 
 
