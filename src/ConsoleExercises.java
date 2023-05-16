@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class ConsoleExercises {
     public static void main(String[] args) {
         double pi = 3.14159;
@@ -14,13 +16,12 @@ public class ConsoleExercises {
 //        System.out.println(userInput);
 
 //        Prompt a user to enter 3 words, and store each of them in a separate variable. Then, display them back in the console, each on a newline.
-//        String userInput;
 //        System.out.println("Enter 3 words: ");
 //        userInput = sc.nextLine();
 //        String[] arrOfStr = userInput.split(" ", 3);
-//        String firstWord = arrOfStr[0];
-//        String secondWord = arrOfStr[1];
-//        String thirdWord = arrOfStr[2];
+//        String firstWord = sc.next();
+//        String secondWord = sc.next();
+//        String thirdWord = sc.next();
 //        System.out.println(firstWord);
 //        System.out.println(secondWord);
 //        System.out.println(thirdWord);
@@ -31,16 +32,22 @@ public class ConsoleExercises {
 //        System.out.println(userSentence);
 
 //        Prompt the user to enter values of length and width of a classroom at Codeup (or your room if virtual).
+//        sc.useDelimiter("\n");
         System.out.println("enter a length");
-        String userLength = sc.nextLine();
+        String length = sc.nextLine();
         System.out.println("enter a width");
-        String userWidth = sc.nextLine();
-//        System.out.printf("%s %s", userLength, userWidth);
-        int parsedWidth = Integer.parseInt(userWidth);
-        int parsedLength = Integer.parseInt(userLength);
-        int area = parsedWidth * parsedLength;
-        int perimeter = (parsedWidth * 2) + (parsedLength * 2);
-        System.out.printf("The length is %d and the width is %d. Your area is %d, and your perimeter is %d", parsedLength, parsedWidth, area, perimeter);
+        String width = sc.nextLine();
+
+        int parsedWidth = parseInt(length);
+        int parsedLength = parseInt(width);
+
+        System.out.printf("%s %s", parsedLength, parsedWidth);
+
+        double area = parsedWidth * parsedLength;
+        System.out.println(area);
+        double perimeter = (parsedWidth * 2) + (parsedLength * 2);
+        System.out.println(perimeter);
+        System.out.printf("The length is %s and the width is %s. Your area is %s, and your perimeter is %s", parsedLength, parsedWidth, area, perimeter);
 
 
 
