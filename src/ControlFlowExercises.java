@@ -61,32 +61,42 @@ public class ControlFlowExercises {
 //        }
 
         //Question 3
-//        System.out.println("What number would you like to go up to?");
         Scanner sc = new Scanner(System.in);
-//        int userNum = parseInt(sc.nextLine());
-//        System.out.printf(" %s | %s | %s %n", "number", "squared", "cubed");
-//        System.out.printf("--------|---------|-------%n");
-//        for (int i = 1; i <= userNum; i++ ) {
-//            System.out.printf(" %-6d | %-7d | %d %n", i, i * i,  i * i * i);
-//        }
 
+//        boolean confirm;
+//        do {
+//            System.out.println("What number would you like to go up to?");
+//            int userNum = sc.nextInt();
+//            System.out.printf(" %s | %s | %s %n", "number", "squared", "cubed");
+//            System.out.printf("--------|---------|-------%n");
+//            for (int i = 1; i <= userNum; i++) {
+//                System.out.printf(" %-6d | %-7d | %d %n", i, i * i, i * i * i);
+//            }
+//            System.out.println("continue? [y/n]");
+//            confirm = sc.next().equalsIgnoreCase("y");
+//        } while (confirm);
+//        System.out.println("See you next time");
         //Question 4
-        System.out.println("Enter a grade from 0 to 100");
-        int grade = parseInt(sc.nextLine());
+        boolean confirm;
+        do {
+            System.out.println("Enter a grade from 0 to 100");
+            int grade = sc.nextInt();
 
-//        if (grade >= 88) {
-//            System.out.println("you got an A");
-//        } else if (grade >= 80) {
-//            System.out.println("you got a B");
-//        } else if (grade >= 67) {
-//            System.out.println("you got a C");
-//        } else if (grade >= 60) {
-//            System.out.println("you got a D");
-//        } else if (grade <= 59) {
-//            System.out.println("you got an F");
-//        }
-
-
+            if (grade >= 88) {
+                System.out.println("you got an A");
+            } else if (grade >= 80) {
+                System.out.println("you got a B");
+            } else if (grade >= 67) {
+                System.out.println("you got a C");
+            } else if (grade >= 60) {
+                System.out.println("you got a D");
+            } else if (grade <= 59) {
+                System.out.println("you got an F");
+            }
+            System.out.println("do you want to continue? [y/n]");
+            confirm = sc.next().equalsIgnoreCase("y");
+        }while (confirm);
+        System.out.println("closing");
 
     }
 }
