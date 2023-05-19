@@ -7,7 +7,7 @@ public class MethodsExercises {
     public static void main(String[] args) {
 //     int product = multiplication(8, 4);
 //        System.out.println(product);
-//        subtraction(6, 3);
+        subtraction(6, 3);
 //        addition(6, 3);
 //        division(6, 3);
 //        modulus(6, 3);
@@ -19,33 +19,43 @@ public class MethodsExercises {
 
     }
 
-    public static int multiplication(int x, int y) {
-//        int multiplied = x * y;
-//        System.out.println(multiplied);
-//        int number = 0;
-//        for (int i = 0; i < y; i++) {
-//            number += x;
-//        }
-//        System.out.println(number);
-        // if x is less than
-        // y swap the numbers
-        if (x < y)
-//            if 2 < 4 return multiplication(4,2)
-            return multiplication(y, x);
-            // iteratively calculate
-            // y times sum of x
-        else if (y != 0)
-//            4 + multiplication(4, 1)
-//            4 + multiplication(4, 0)
-//            4 + 4 + 0 = 8
-//            8 + 8 + 8 + 8 + 0
-            return (x + multiplication(x, y - 1));
+//    public static int multiplication(int x, int y) {
+////        int multiplied = x * y;
+////        System.out.println(multiplied);
+////        int number = 0;
+////        for (int i = 0; i < y; i++) {
+////            number += x;
+////        }
+////        System.out.println(number);
+//        // if x is less than
+//        // y swap the numbers
+//        if (x < y)
+////            if 2 < 4 return multiplication(4,2)
+//            return multiplication(y, x);
+//            // iteratively calculate
+//            // y times sum of x
+//        else if (y != 0)
+////            4 + multiplication(4, 1)
+////            4 + multiplication(4, 0)
+////            4 + 4 + 0 = 8
+////            8 + 8 + 8 + 8 + 0
+//            return (x + multiplication(x, y - 1));
+//
+//            // if any of the two numbers is
+//            // zero return zero
+//        else
+//            return 0;
+//    }
+        public static int multiplication(int x, int y) {
+            if (y == 0) {
+                return 0;
+            } else if (y == 1) {
+                return x;
+            } else {
+                return x + multiplication(x, y - 1);
+            }
+        }
 
-            // if any of the two numbers is
-            // zero return zero
-        else
-            return 0;
-    }
 
     public static void subtraction(int x, int y) {
         int subtracted = x - y;
@@ -86,7 +96,7 @@ public class MethodsExercises {
         int fact = 1;
         if(userInput > 10 || userInput < 1) {
             System.out.println("Invalid number");
-            return  getFactorial();
+            return getFactorial();
         }
         for(int i = 1; i <= userInput; i++) {
             fact = fact* i;
