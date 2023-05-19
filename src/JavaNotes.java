@@ -3,4 +3,5 @@ public class JavaNotes {
         int x = 5 * 4 % 3;
         System.out.println(x);
     }
+
 }
