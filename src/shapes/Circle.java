@@ -1,0 +1,26 @@
+package shapes;
+
+public class Circle {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+        getArea();
+        getCircumference();
+    }
+
+    public double getArea() {
+        double area = Math.PI * (radius * radius);
+        System.out.println(area);
+        return area;
+
+    }
+
+    public double getCircumference() {
+        double circumference = 2 * Math.PI * radius;
+        System.out.println(circumference);
+        return circumference;
+    }
+
+
+}

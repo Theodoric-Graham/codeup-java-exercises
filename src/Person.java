@@ -1,7 +1,7 @@
 public class Person {
     private String name;
 
-    public Person(String name) {
+    private Person(String name) {
         this.name = name;
     }
 
@@ -13,12 +13,12 @@ public class Person {
     }
 
     public static void main(String[] args) {
-//        Person theo = new Person("Theo");
-//        System.out.println(theo);
-//        System.out.println(theo.getName());
-//        theo.setName("Theodoric");
-//        System.out.println(theo);
-//        theo.sayHello();
+        Person theo = new Person("Theo");
+        System.out.println(theo);
+        System.out.println(theo.getName());
+        theo.setName("Theodoric");
+        System.out.println(theo);
+        theo.sayHello();
 
 //        names return as equal but they are not the same object
 //        Person person1 = new Person("John");
