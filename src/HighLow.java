@@ -16,6 +16,7 @@ public class HighLow {
     }
 
     public static void game() {
+        int guesses = 5;
         boolean passed;
         int randomNum = random();
         System.out.println("Guess a number between 1 and 100");
@@ -29,12 +30,16 @@ public class HighLow {
                 System.out.println("GOOD GUESS");
                 passed = true;
             } else if (userGuess < randomNum) {
+                guesses--;
+                System.out.printf("You have %d guesses %n", guesses);
                 System.out.println("HIGHER");
                 passed = false;
             } else {
+                guesses--;
+                System.out.printf("You have %d guesses %n", guesses);
                 System.out.println("LOWER");
                 passed = false;
             }
-        } while (!passed);
+        } while (!passed && guesses != 0);
     }
 }
