@@ -36,33 +36,24 @@ public class MoviesApplication {
     // takes the updated choice variable and passes it into showMovies, triggering a case
     public static String showMovies(int selection) {
         switch (selection) {
-            case 0:
-                System.out.println("Ending the application");
-                break;
-            case 1:
+            case 0 -> System.out.println("Ending the application");
+            case 1 -> {
                 // Loops over the movies and adds them to the MoviesShown string
                 for (Movie element : MoviesArray.findAll()) {
-                    moviesShown += element.getName() + " -- " + element.getCategory() +"\n";
+                    moviesShown += element.getName() + " -- " + element.getCategory() + "\n";
                 }
                 System.out.println(moviesShown);
-                break;
-            case 2:
+            }
+            case 2 ->
                 //passing in the category for sortMovies method
-                sortMovies("animated");
-                break;
-            case 3:
-                sortMovies("drama");
-                break;
-            case 4:
-                sortMovies("horror");
-                break;
-            case 5:
-                sortMovies("scifi");
-                break;
-            default:
+                    sortMovies("animated");
+            case 3 -> sortMovies("drama");
+            case 4 -> sortMovies("horror");
+            case 5 -> sortMovies("scifi");
+            default -> {
                 System.out.println("Not a valid entry, please select an option");
                 return movieApp();
-
+            }
         }
     return moviesShown;
     }
