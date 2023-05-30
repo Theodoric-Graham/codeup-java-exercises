@@ -105,10 +105,13 @@ public class JavaNotes {
         //.isEmpty()
         //Set does not show duplicates, ordered
         Set<String> keys = fruitsMap.keySet();
-        for (String key : keys) {
-            System.out.println("SET");
-            System.out.println(fruitsMap.get(key));
-        }
+        System.out.println("SET");
+        System.out.println(keys);
+
+//        for (String key : keys) {
+//            System.out.println("SET");
+//            System.out.println(fruitsMap.get(key));
+//        }
 
         //HashSet, only shows no duplicates, does not maintain order
         HashSet<String> fruitSet = new HashSet<>();
@@ -124,8 +127,6 @@ public class JavaNotes {
         for (String fruit : fruitSet) {
             System.out.println(fruit);
         }
-
-
 
 
     }
