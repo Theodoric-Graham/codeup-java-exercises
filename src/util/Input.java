@@ -10,9 +10,9 @@ public class Input {
     }
 
     public String getString() {
-        System.out.println("Type a string");
+//        System.out.println("Type a string");
         String input = scanner.nextLine();
-        System.out.println(input);
+//        System.out.println(input);
         return input;
     }
 
@@ -46,12 +46,12 @@ public class Input {
         return input;
     }
 
-    public int getInt() {
-        System.out.println("Enter an integer");
-        int input = scanner.nextInt();
-        System.out.printf("You selected %d %n", input);
-        return input;
-    }
+//    public int getInt() {
+//        System.out.println("Enter an integer");
+//        int input = scanner.nextInt();
+//        System.out.printf("You selected %d %n", input);
+//        return input;
+//    }
 
     public int getInt(String prompt) {
         System.out.println(prompt);
@@ -71,12 +71,12 @@ public class Input {
         return input;
     }
 
-    public double getDouble() {
-        System.out.println("Enter a double");
-        double input = scanner.nextDouble();
-        System.out.printf("You selected %s %n", input);
-        return input;
-    }
+//    public double getDouble() {
+//        System.out.println("Enter a double");
+//        double input = scanner.nextDouble();
+//        System.out.printf("You selected %s %n", input);
+//        return input;
+//    }
 
     public double getDouble(String prompt) {
         System.out.println(prompt);
@@ -85,7 +85,48 @@ public class Input {
         return input;
     }
 
+    public int getInt() {
+        System.out.println("Enter an Integer Value");
+        String stringVal = getString();
+        try {
+            return Integer.valueOf(stringVal);
+        } catch(NumberFormatException e) {
+            System.out.println("Not an integer");
+            return getInt();
+        }
+    }
 
+    public double getDouble() {
+        System.out.println("Enter a double");
+        String stringVal = getString();
+        try {
+            return Double.valueOf(stringVal);
+        } catch (NumberFormatException e) {
+            System.out.println("Not a Double");
+            return getDouble();
+        }
+    }
 
+    public Integer getBinary() {
+        System.out.println("Enter a binary");
+        String stringVal = getString();
+        try {
+            return Integer.valueOf(stringVal, 2);
+        } catch (NumberFormatException e) {
+            System.out.println("Something wrong");
+            return getBinary();
+        }
+    }
+
+    public Integer getHex() {
+        System.out.println("Enter a hexcode");
+        String stringVal = getString();
+        try {
+            return Integer.valueOf(stringVal, 16);
+        } catch (NumberFormatException e) {
+            System.out.println("Somethings wrong");
+            return getBinary();
+        }
+    }
 
 }
