@@ -1,5 +1,11 @@
 package notes;
 
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 public class JavaNotes {
@@ -18,28 +24,28 @@ public class JavaNotes {
         //start with data type
 
 //    fruits.add("banana");
-        ArrayList<String> fruits;
-        fruits = new ArrayList<>();
-        fruits.add("banana");
-        fruits.add("apple");
+//        ArrayList<String> fruits;
+//        fruits = new ArrayList<>();
+//        fruits.add("banana");
+//        fruits.add("apple");
 //        System.out.println(fruits);
 
         // can also give it any # of string args
         // can make a new array list from some other list
-        fruits = new ArrayList<>(Arrays.asList("guava", "peach"));
+//        fruits = new ArrayList<>(Arrays.asList("guava", "peach"));
 //        System.out.println(fruits);
 
         //show size() instead of .length
 //        System.out.println(fruits.size());
 
         //add another element
-        fruits.add("banana");
+//        fruits.add("banana");
 //        System.out.println(fruits.size());
         //get an element at a given index
-        fruits.add(1, "apple");
+//        fruits.add(1, "apple");
 //        System.out.println(fruits);
         //bulk add
-        fruits.addAll(Arrays.asList("plum", "apple", "papaya", "durian"));
+//        fruits.addAll(Arrays.asList("plum", "apple", "papaya", "durian"));
 //        System.out.println(fruits);
         //loops with arrayList (get method and pass in index)
         //for i
@@ -83,30 +89,30 @@ public class JavaNotes {
 
         // .put()
         fruitsMap.put("fruit", "dragonfruit");
-        System.out.println(fruitsMap);
+//        System.out.println(fruitsMap);
         //.putIfAbsent() case sensitive for key
         fruitsMap.putIfAbsent("fruit", "banana");
-        System.out.println(fruitsMap);
+//        System.out.println(fruitsMap);
         //.get() give it key value, will give null if it doesnt exist
-        System.out.println(fruitsMap.get("fruit"));
-        System.out.println(fruitsMap.get("Fruit"));
+//        System.out.println(fruitsMap.get("fruit"));
+//        System.out.println(fruitsMap.get("Fruit"));
         //.getOrDefault() if this doesnt exist, create this value with this key
-        System.out.println(fruitsMap.getOrDefault("Fruit", "APPLE"));
-        System.out.println(fruitsMap);
+//        System.out.println(fruitsMap.getOrDefault("Fruit", "APPLE"));
+//        System.out.println(fruitsMap);
         //.containsKey() returns boolean if it contains the key
-        System.out.println(fruitsMap.containsKey("fruit"));
+//        System.out.println(fruitsMap.containsKey("fruit"));
         //.containsValue() returns boolean if it contains the value
-        System.out.println(fruitsMap.containsValue("dragonfruit"));
+//        System.out.println(fruitsMap.containsValue("dragonfruit"));
         //.replace() 1st arg is key, 2nd is value, mutates original, if no key returns null
         fruitsMap.replace("fruit", "lemon");
-        System.out.println(fruitsMap);
+//        System.out.println(fruitsMap);
         //.remove()
         //.clear()
         //.isEmpty()
         //Set does not show duplicates, ordered
         Set<String> keys = fruitsMap.keySet();
-        System.out.println("SET");
-        System.out.println(keys);
+//        System.out.println("SET");
+//        System.out.println(keys);
 
 //        for (String key : keys) {
 //            System.out.println("SET");
@@ -121,15 +127,83 @@ public class JavaNotes {
         fruitSet.add("apple");
         fruitSet.add("apple");
 
-        System.out.println(fruitSet);
+//        System.out.println(fruitSet);
 
         //iterate over the set
-        for (String fruit : fruitSet) {
-            System.out.println(fruit);
+//        for (String fruit : fruitSet) {
+//            System.out.println(fruit);
+//        }
+
+        //Files IO
+        //Path Objects
+        //absolute vs relative paths
+        //an absolute path is the location of the file on your system regardless of where you are (ROOT)
+        // /user/bob/pics/dog.gif (absolute path)
+        // ../sue/bob/pics/dog.gif (relative path) very flexible
+        //give me a path object to this, just a starting point
+        Path myDir = Paths.get("mydir");
+//        Files.createDirectory(myDir);
+
+        if(Files.notExists(myDir)) {
+            try {
+                Files.createDirectory(myDir);
+                myDir = Paths.get("mydir/otherdir");
+                Files.createDirectory(myDir);
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
         }
+
+        //will create an object for a file
+        Path myFile = Paths.get("myDir", "myFile.txt");
+        try {
+            Files.createFile(myFile);
+        } catch (IOException e) {
+//            e.printStackTrace();
+        }
+        //check using .exist and .notExists
+
+        List<String> fruits = Arrays.asList("apple", "pear", "banana");
+
+
+        // need path, need item
+//        try {
+//            Files.write(myFile, fruits );
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        // default action to writing a file is to overwrite, can use append in the option StandardOpenOption.APPEND
+
+//        List<String> fileStrings = getFileStrings();
+
+//        List<Integer> numbers = new ArrayList<>();
+//        numbers.add(13);
+//        numbers.add(new Integer(8));
+//        numbers.add(2,6);
+//        for (Integer number : numbers) {
+//            System.out.println(number + " ");
+//        }
+
+
 
 
     }
+
+//    private static List<String> getFileStrings() {
+//    }
+
+    //creating a seperate method on the "fighter"
+//    private static List<String> getFileStrings() {
+//
+//    }
+
+    //iterate over the strings
+
+    //make a new object from each string
+
+    //add the objects to the list
+
+    //String [] parts = string.split(",")
 
 
 }
