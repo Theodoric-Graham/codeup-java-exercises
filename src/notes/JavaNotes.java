@@ -186,10 +186,11 @@ public class JavaNotes {
 
 
 
-
+//this is a comment for the green square, sorry not sorry
     }
 
 //    private static List<String> getFileStrings() {
+//        Path datafile = Paths.get("mydir")
 //    }
 
     //creating a seperate method on the "fighter"
